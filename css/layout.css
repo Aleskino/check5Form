@@ -1,0 +1,171 @@
+/* 
+    Created on : 28 mai 2017, 08:34:28
+    Author     : Claire
+*/
+
+body {
+    color: #202020;
+}
+
+.container {
+    max-width: 800px;
+}
+
+.nav {
+
+}
+
+.nav-item a {
+    color: #797979;
+    text-decoration: none;
+    font-family: "Consolas", "Monaco", "Menlo", monospace;
+}
+
+.nav-item a:hover {
+    cursor: pointer;
+    color: #4d4a4a;
+    border: none;
+}
+
+.hero {
+    color: #363636;
+}
+
+.hero div {
+}
+
+.hero h3 {
+    font-family: "Edelsans", sans-serif;
+    font-size: 5rem;
+    margin:0;
+}
+
+.hero h5 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-weight: 200;
+}
+
+/* ============= TEST Styles ============== */
+
+
+.testzone {
+    background: #e4e4e4;
+    padding:10px;
+}
+.resultzone{
+    background: #406882;
+    color:#fff;
+    padding:10px;
+    font-family: monospace;
+    font-size: 1.0em;
+}
+span.results {
+    margin:0;
+    color:#406882;
+}
+.red {color:#c00;}
+.boldgreen {background-color: #ccffcc; font-weight: bold;}
+.marker {background-color: #ff0;}
+.underlined {text-decoration: underline;}
+
+div.innerdiv, div.outerdiv {
+
+    min-width:120px;
+    border:1px solid #000;
+    display:inline-block;
+    /*    width:50%;*/
+    margin:5px; padding:5px;
+    background-color: #4cacbe;
+    color:white;
+    line-height: 50px;
+    text-align: center;
+}
+div.outerdiv {
+    background-color: #fbeaea;
+
+}
+table.nicetable {
+    width:90%;
+}
+.nicetable th, .nicetable td {
+    border:1px solid black;
+    width:20%;
+}
+.nicetable td {
+    text-align:center;
+}
+
+/* forms ======== */
+.form-group {}
+.help-block {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #737373;
+}
+.has-error .help-block{
+    color: #a94442;
+    font-style: italic;
+    font-size: 85%;
+}
+.has-error input {
+    border-color: #a94442;
+    box-shadow: inset 0 2px 2px rgba(0,0,0,0.075);
+}
+
+/* ================================= */
+
+.header {
+    font-weight: 200;
+}
+
+.content {
+    font-size: 1.8rem;
+}
+
+.card {
+    background: #FAFAFA;
+}
+
+
+/* === Footer === */
+footer {
+    position: absolute;
+    margin: 5rem;
+}
+
+#footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#footer-name, #footer-madeby {
+    margin-bottom: 0;
+    margin-top: 0;
+    margin-left: 1rem;
+}
+
+#footer-madeby {
+    font-weight: 200;
+}
+
+#footer-name {
+    font-weight: 700;
+}
+
+#footer-desc {
+    font-size: 2.5rem;
+}
+
+#footer-logo {
+    height: 75px;
+    width: 75px;
+    border-radius: 10px;
+}
+
+#footer-link {
+    color: #202020;
+    text-decoration: none;
+}
