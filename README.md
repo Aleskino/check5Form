@@ -75,8 +75,14 @@ myconstraint: {
 ```
 
 *myconstraint* is called with the **data-check** attribute on the control :
+<<<<<<< HEAD
 ```
  <input type="text" name="mycontrol" data-check="myconstraint" >
+=======
+
+```
+<input type="text" name="mycontrol" data-check="myconstraint" >
+>>>>>>> b8af45dacf2fc6c87401f3925c88b3c9f19714cb
 ```
 
 Here are some examples that you will see in the included demo.
