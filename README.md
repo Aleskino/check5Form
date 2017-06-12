@@ -1,4 +1,4 @@
-# chek5Form
+# check5Form
 
 For a more detailed introduction to HTML5 form validation you can find some great articles like  [this one](https://www.html5rocks.com/en/tutorials/forms/constraintvalidation/) or check MDN for [a complete reference](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation).
 
@@ -75,8 +75,9 @@ myconstraint: {
 ```
 
 *myconstraint* is called with the **data-check** attribute on the control :
-
-> <input type="text" name="mycontrol" data-check="myconstraint" >
+```
+ <input type="text" name="mycontrol" data-check="myconstraint" >
+```
 
 Here are some examples that you will see in the included demo.
 
