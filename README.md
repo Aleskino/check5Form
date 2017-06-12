@@ -29,8 +29,9 @@ None ! Pure Javascript - no dependency
 </form>
 ```
 
-- the form element MUST have an ID
-- each form elements MUST be wrapped in a container with "form-group" class. Only one element per container
+- the form element MUST have an **ID**
+- each form elements MUST be wrapped in a container with "**form-group**" class. Only one element per container
+- custom constraints are set with a **data-check** attribute
 
 ## CSS
 
@@ -62,6 +63,7 @@ box-shadow: inset 0 2px 2px rgba(0,0,0,0.075);
   checkForm(ID_of_my_form, {list_of_custom_constraints});
 ```
 each constraint must have a validation function which returns false (fail) or true (success), and a notification message.
+
 ```javascript
 myconstraint: {
     fn: function (e, form) {
@@ -71,6 +73,10 @@ myconstraint: {
     msg: "I'm really not happy !"
 }
 ```
+
+*myconstraint* is called with the **data-check** attribute on the control :
+
+> <input type="text" name="mycontrol" data-check="myconstraint" >
 
 Here are some examples that you will see in the included demo.
 

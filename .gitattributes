@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# help GitHub to detect the right language for the project
+*.html linguist-vendored
+*.css linguist-vendored
+# *.js linguist-vendored=false
