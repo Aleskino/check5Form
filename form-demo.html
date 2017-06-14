@@ -5,8 +5,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="A minimal css framework.">
-        <meta name="author" content="Alain">
+        <meta name="description" content="Demo for Check5Form">
+        <meta name="author" content="Aleskino">
 
         <title>Check5Form</title>
 
@@ -25,8 +25,7 @@
         </div>
         <section class="hero container center text-center">
             <div>
-                <img src="./img/logo.png" alt="Logo" >
-        
+                <img src="img/logo.png" alt="Logo" >
                 <h5>simple HTML5 form validation</h5>
             </div>
         </section>
@@ -38,7 +37,13 @@
 
             <div class="guide-section" id="form-section">
                 <h3 class="header">Play with forms !</h3>
-               
+                <div class="row">   
+                    <div class="col">
+                        <div >
+                            <button id="formfiller" class="">Fill this form</button>
+                        </div>
+                    </div>
+                </div>
                 <!-- prevent chrome to prefill the form -->
                 <form action="#" id="testform" class="validate" autocomplete="off">
                     <div class="row">
@@ -48,7 +53,7 @@
                                 <label for="inputEmail3" class="control-label">Email*</label>
                                 <input type="email"   name="inputEmail3" id="inputEmail3" placeholder="Email" required />
                             </div>
-                               <div class="form-group">
+                            <div class="form-group">
                                 <label for="inputEmail3" class="control-label">Birthdate*</label>
                                 <input type="text"   name="date3" id="date3" data-check="date" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="jj/mm/aaaa" required />
                             </div>
@@ -70,7 +75,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input type="text" name="name"   required placeholder="John Doe"/>
+                                <input type="text" name="name" required placeholder="John Doe"/>
                             </div>
                         </div>
                         <div class="col">
@@ -88,18 +93,18 @@
                         <div class="col">
                             <div class="form-group">
                                 <label>Message</label>
-                                <textarea    placeholder="Greetings..."></textarea>
+                                <textarea name="message" placeholder="Greetings..."></textarea>
                             </div>  
                             <div class="form-group">
                                 <label>Required</label>
-                                <input type="checkbox" data-check="acceptTC" required name="terms"> I accept the <u>Terms and Conditions</u>
+                                <input type="checkbox" data-check="acceptterms" required name="terms"> I accept the <u>Terms and Conditions</u>
                             </div> 
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col">
-                            <label>Checkbox group</label>
+                            <h5>Checkbox group</h5>
                             <div class="form-group">
                                 <input type="checkbox" name="option[]" value="option1" data-check="atleastone" > Option 1<br>
                                 <input type="checkbox" name="option[]" value="option2" data-check="atleastone" > Option 2<br>
@@ -110,7 +115,7 @@
                                 <input type="checkbox" name="option[]" value="option7" data-check="atleastone" >  Option 7
                             </div></div>
                         <div class="col">
-                            <label>Radio Group</label>
+                            <h5>Radio Group</h5>
                             <div class="form-group">
                                 <input name="color[]" type="radio" value="1" checked /> Blue<br>
                                 <input name="color[]" type="radio" value="0" /> Red<br>
@@ -150,7 +155,7 @@
 
         </footer>
 
-     <!--   <script src="js/core.js"></script>  -->
+        <!--   <script src="js/core.js"></script>  -->
         <script src="js/form-mod.js"></script>
         <script src="js/form-demo.js"></script>
     </body>

@@ -7,24 +7,28 @@
  */
 
 
-
 checkForm = (function () {
     'use strict';
 
     var form; // form object
     var checks; // elements wiht data-check attribute
-    var validators = {}; // custom validators
+
+    var opts = {
+        onValid: function () {return true;}, // called when valid form submit.
+        onError: function () {}, //  called when invalid form submit
+        validators: {}
+    }
 
 
     /**
      * 
      * @param {type} formId Id element form
-     * @param {type} customFn Custom validator function
+     * @param {type} settings Custom validator function
      * @returns {undefined}
      */
-    function init(formId, customFn) {
+    function init(formId, settings) {
 
-        setOpts(validators, customFn);
+        setOpts(opts, settings);
 
         form = document.getElementById(formId);
         if (!form) {
@@ -43,10 +47,12 @@ checkForm = (function () {
 
             form.checkValidity();   // update html5 validation
             if (validateAll()) {
-                return true; // good !
+                return opts.onValid(e); // good
+            } else {
+                e.preventDefault(); // cancel submit
+                form.querySelector('.form-group.has-error').scrollIntoView();
+                opts.onError(e);
             }
-            e.preventDefault(); // bad ! cancel submit
-            form.querySelector('.form-group.has-error').scrollIntoView();
         });
 
         // get elements with custom validation : "data-check" attribute
@@ -86,10 +92,10 @@ checkForm = (function () {
      */
     var validate = function (e) {
         var error = "", check = e.dataset.check;
-
+        var v = opts.validators;
         // custom validation first
-        if (validators[check]) {
-            var error = validators[check].fn.call(this, e, form) ? "" : validators[check].msg;
+        if (v[check]) {
+            var error = v[check].fn.call(this, e, form) ? "" : v[check].msg;
         }
         // then html5 validation
         if (!e.validity.valid) {
@@ -131,7 +137,7 @@ checkForm = (function () {
         } else {
             parent.querySelector('.help-block').innerHTML = msg;
         }
-    }
+    };
 
     /**
      * Removes error notification
@@ -158,7 +164,7 @@ checkForm = (function () {
                 o[key] = user[key];
             });
         }
-    }
+    };
 
     return init; // return constructor
 })();

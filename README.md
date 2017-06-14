@@ -2,7 +2,7 @@
 
 For a more detailed introduction to HTML5 form validation you can find some great articles like  [this one](https://www.html5rocks.com/en/tutorials/forms/constraintvalidation/) or check MDN for [a complete reference](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Form_validation).
 
-HTML5 form validation but not very flexible. This short piece of code is an attempt to provide uniform appearance across browsers and custom constraints beyond the simple ones like `required`, `maxlength`, `pattern`, `step`, etc. and/or the correct form type like `email`, `phone`, `number`, etc.
+HTML5 form validation is handy but not very flexible. This short piece of code is an attempt to provide uniform appearance across browsers and custom constraints beyond the simple ones like `required`, `maxlength`, `pattern`, `step`, etc. and/or the correct input type like `email`, `phone`, `number`, etc.
 
 Note that - as of today - these constraints are [widely supported](http://caniuse.com/#feat=form-validation). That's not the case of [Date and Time input](http://caniuse.com/#feat=input-datetime).
 
@@ -60,9 +60,30 @@ box-shadow: inset 0 2px 2px rgba(0,0,0,0.075);
 
 ## Javascript
 ```javascript
-  checkForm(ID_of_my_form, {list_of_custom_constraints});
+  checkForm(ID_of_my_form, settings);
 ```
-each constraint must have a validation function which returns false (fail) or true (success), and a notification message.
+where settings is :
+```javascript
+var settings = {
+  validators: {
+  /* =========== list of constraints ============ */
+  },
+  /* =========== on valid form callback ============ */
+  onValid: function (e) {
+      var data = e.target.elements;
+      alert('Well Done ! ' + data.length + ' Elements submitted');
+      // if submit is done by ajax...
+      // e.preventDefault();
+  },
+  /* ============ on error callback ============== */
+  onError: function (e) {
+      alert('Check twice !');
+  }
+}
+```
+
+
+Each constraint must have a validation function which returns false (fail) or true (success), and a notification message.
 
 ```javascript
 myconstraint: {

@@ -1,16 +1,163 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<!doctype html>
 <html>
+
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Demo for Check5Form">
+        <meta name="author" content="Aleskino">
+
+        <title>Check5Form</title>
+
+        <!-- Link to CSS -->
+        <link rel="stylesheet" type="text/css" href="../css/base.css" />
+        <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+
     </head>
+
     <body>
-        <div>TODO write content</div>
+        <div class="nav horizontal-align">
+            <div class="nav-item"><a href="#installation">Installation</a></div>
+            <div class="nav-item"><a href="#guide">Guide</a></div>
+            <div class="nav-item"><a href="#tests">Tests</a></div>
+
+        </div>
+        <section class="hero container center text-center">
+            <div>
+                <img src="../img/logo.png" alt="Logo" >
+                <h5>simple HTML5 form validation</h5>
+            </div>
+        </section>
+
+        <section id="main-content" class="container">
+
+            <!-- ============================ FORMS ================================ -->
+
+
+            <div class="guide-section" id="form-section">
+                <h3 class="header">Play with forms !</h3>
+                <div class="row">   
+                    <div class="col">
+                        <div >
+                            <button id="formfiller" class="">Fill this form</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- prevent chrome to prefill the form -->
+                <form action="#" id="testform" class="validate" autocomplete="off">
+                    <div class="row">
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="control-label">Email*</label>
+                                <input type="email"   name="inputEmail3" id="inputEmail3" placeholder="Email" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="control-label">Birthdate*</label>
+                                <input type="text"   name="date3" id="date3" data-check="date" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="jj/mm/aaaa" required />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="pwd3" class="control-label">Password*</label>
+                                <input type="password" " name="pwd3" id="pwd3" data-check="confirmpwd" placeholder="Password" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd3-confirm" class="control-label">Confirm Password*</label>
+                                <input type="password"  id="pwd3-confirm" name="pwd3-confirm" data-check="confirmpwd" placeholder="Confirm Password" required />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" name="name" required placeholder="John Doe"/>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Type</label>
+                                <select name="type" >
+                                    <option value="message">Message</option>
+                                    <option value="feature">Feature</option>
+                                    <option value="report">Report</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea name="message" placeholder="Greetings..."></textarea>
+                            </div>  
+                            <div class="form-group">
+                                <label>Required</label>
+                                <input type="checkbox" data-check="acceptterms" required name="terms"> I accept the <u>Terms and Conditions</u>
+                            </div> 
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <h5>Checkbox group</h5>
+                            <div class="form-group">
+                                <input type="checkbox" name="option[]" value="option1" data-check="atleastone" > Option 1<br>
+                                <input type="checkbox" name="option[]" value="option2" data-check="atleastone" > Option 2<br>
+                                <input type="checkbox" name="option[]" value="option3" data-check="atleastone" > Option 3<br>
+                                <input type="checkbox" name="option[]" value="option4" data-check="atleastone" > Option 4<br>
+                                <input type="checkbox" name="option[]" value="option5" data-check="atleastone" > Option 5<br>
+                                <input type="checkbox" name="option[]" value="option6" data-check="atleastone" > Optione 6<br>
+                                <input type="checkbox" name="option[]" value="option7" data-check="atleastone" >  Option 7
+                            </div></div>
+                        <div class="col">
+                            <h5>Radio Group</h5>
+                            <div class="form-group">
+                                <input name="color[]" type="radio" value="1" checked /> Blue<br>
+                                <input name="color[]" type="radio" value="0" /> Red<br>
+                                <input name="color[]" type="radio" value="0" /> Yellow<br>
+                                <input name="color[]" type="radio" value="0" /> Purple<br>
+                                <input name="color[]" type="radio" value="0" /> Black<br>
+                            </div></div>
+                    </div>
+                    <div class="row">
+                        <div >
+                            <button type="submit" class="btn btn-primary">submit</button>
+                        </div>
+
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col">
+                        <pre><code>&lt;input type=&quot;text&quot; placeholder=&quot;What is your name?&quot;/&gt;
+&lt;input type=&quot;email&quot; placeholder=&quot;What is your email?&quot;/&gt;
+&lt;textarea placeholder=&quot;Additional details...&quot;&gt;&lt;/textarea&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+        <!-- ===================   FOOTER ========================= -->
+        <footer>
+
+            <div id="footer-content">
+
+                <div id="footer-desc">
+                    <p id="footer-madeby">Made by</p>
+                    <p id="footer-name">ME</p>
+                </div>
+            </div>
+
+        </footer>
+
+        <!--   <script src="js/core.js"></script>  -->
+        <script src="../js/form-mod.js"></script>
+        <script src="index-script.js"></script>
     </body>
+
 </html>
